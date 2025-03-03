@@ -100,7 +100,7 @@ Dự án được xây dựng với mục tiêu:
     npm run dev
     ```
 
-- **Chạy WebSocket server (nếu sử dụng socket.io)**:
+- **Chạy WebSocket server**:
     ```bash
     node server.js
     ```
@@ -118,19 +118,6 @@ Dự án được xây dựng với mục tiêu:
 
 4. **Sau thi đấu**:
    - Xem bảng xếp hạng, xuất báo cáo.
-
-## 📈 Tính năng mở rộng
-- Tích hợp API thông báo (email, SMS).
-- Responsive trên tablet và mobile.
-- Hỗ trợ đa ngôn ngữ (nếu cần).
-
-## 👥 Đóng góp
-- Fork repository và tạo pull request để đóng góp.
-- Báo lỗi hoặc đề xuất tính năng qua Issues.
-
-## 📧 Liên hệ
-- Email: [minhdat204@example.com](mailto:minhdat204@example.com)
-- GitHub: [minhdat204](https://github.com/minhdat204)
 
 ---
 
