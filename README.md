@@ -1,66 +1,137 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Olympic Tin học 2025 - Đấu trường số - Cao Thắng
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Tổng quan dự án
 
-## About Laravel
+**Olympic Tin học 2025 – Đấu trường số** là một hệ thống quản lý cuộc thi lập trình và tin học được phát triển để tổ chức các vòng thi đấu trực tuyến và trực tiếp tại Trường Cao đẳng Kỹ thuật Cao Thắng. Hệ thống hỗ trợ ban tổ chức, giám khảo và thí sinh trong việc quản lý vòng thi, câu hỏi, điểm số, bảng xếp hạng và báo cáo kết quả theo thời gian thực.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Dự án được xây dựng với mục tiêu:
+- Tối ưu hóa quy trình tổ chức cuộc thi.
+- Cung cấp giao diện trực quan, responsive trên đa nền tảng.
+- Đảm bảo tính chính xác và minh bạch trong chấm điểm và xếp hạng.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 🎯 Tính năng chính
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### 1. Quản lý cuộc thi (Admin)
+- Tạo và cấu hình các vòng thi (vòng loại, tứ kết, bán kết, chung kết).
+- Nhập danh sách thí sinh từ file Excel và tự động phân nhóm.
+- Thiết lập gói câu hỏi cho từng vòng (Alpha, Beta, RC, GOLD).
+- Giám sát thống kê và xuất báo cáo (PDF/Excel).
 
-## Learning Laravel
+### 2. Quản lý thí sinh và nhóm
+- Chia tự động 60 thí sinh thành 6 nhóm (10 người/nhóm).
+- Theo dõi trạng thái thí sinh: đang thi, trả lời đúng/sai, bị loại.
+- Giao diện mobile cho giám khảo: đánh dấu “Loại” và kích hoạt “Cứu trợ”.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### 3. Hiển thị câu hỏi và trình chiếu
+- Giao diện desktop hiển thị câu hỏi (văn bản, hình ảnh, video, kịch bản).
+- Đồng bộ đếm ngược thời gian và hiệu ứng chuyển cảnh.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### 4. Chấm điểm và bảng xếp hạng
+- Chấm điểm tự động, cập nhật thời gian thực.
+- Bảng xếp hạng theo vòng, nhóm, lớp.
+- Dashboard thống kê: số thí sinh, lượt bị loại, lượt cứu trợ.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### 5. Quản lý câu hỏi
+- Thêm, sửa, xóa câu hỏi với đa định dạng (trắc nghiệm, điền chữ, hình ảnh, video).
+- Tạo gói câu hỏi bằng công cụ kéo-thả hoặc tự động.
 
-## Laravel Sponsors
+### 6. Báo cáo và phân tích
+- Thống kê thời gian thực với biểu đồ.
+- Xuất báo cáo chi tiết sau mỗi vòng thi.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## 🛠 Công nghệ sử dụng
+- **Backend**: Laravel (API), MySQL.
+- **Frontend**: HTML, CSS, JavaScript (responsive).
+- **Realtime**: WebSocket (socket.io).
+- **Bảo mật**: Phân quyền, xác thực 2FA.
 
-### Premium Partners
+## 📋 Cài đặt
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+### Yêu cầu
+- PHP >= 8.0
+- Composer
+- Node.js & npm
+- MySQL
 
-## Contributing
+### Hướng dẫn cài đặt
+1. **Clone repository**:
+    ```bash
+    git clone https://github.com/minhdat204/Olympictech_Backend_2025.git
+    cd Olympictech_Backend_2025
+    ```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+2. **Cài đặt dependencies PHP**:
+    ```bash
+    composer install
+    ```
 
-## Code of Conduct
+3. **Cài đặt dependencies Node**:
+    ```bash
+    npm install
+    ```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+4. **Sao chép file `.env`**:
+    ```bash
+    cp .env.example .env
+    ```
 
-## Security Vulnerabilities
+5. **Tạo khóa ứng dụng**:
+    ```bash
+    php artisan key:generate
+    ```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+6. **Cấu hình file `.env`**:
+   - Thiết lập thông tin cơ sở dữ liệu (DB_CONNECTION, DB_HOST, DB_PORT, DB_DATABASE, DB_USERNAME, DB_PASSWORD).
+   - Cấu hình các thông số khác nếu cần.
 
-## License
+7. **Chạy migration để tạo cơ sở dữ liệu**:
+    ```bash
+    php artisan migrate
+    ```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+8. **Khởi động server phát triển**:
+    ```bash
+    php artisan serve
+    ```
+
+### Lệnh bổ sung
+- **Biên dịch tài nguyên frontend**:
+    ```bash
+    npm run dev
+    ```
+
+- **Chạy WebSocket server (nếu sử dụng socket.io)**:
+    ```bash
+    node server.js
+    ```
+
+## 🚀 Sử dụng
+1. **Đăng nhập**:
+   - Admin: Quản lý toàn bộ hệ thống.
+   - Giám khảo: Theo dõi và quản lý nhóm thí sinh qua giao diện mobile.
+
+2. **Chuẩn bị thi**:
+   - Nhập danh sách thí sinh, cấu hình vòng thi và gói câu hỏi.
+
+3. **Trong thi đấu**:
+   - Giao diện desktop hiển thị câu hỏi, giám khảo quản lý qua mobile.
+
+4. **Sau thi đấu**:
+   - Xem bảng xếp hạng, xuất báo cáo.
+
+## 📈 Tính năng mở rộng
+- Tích hợp API thông báo (email, SMS).
+- Responsive trên tablet và mobile.
+- Hỗ trợ đa ngôn ngữ (nếu cần).
+
+## 👥 Đóng góp
+- Fork repository và tạo pull request để đóng góp.
+- Báo lỗi hoặc đề xuất tính năng qua Issues.
+
+## 📧 Liên hệ
+- Email: [minhdat204@example.com](mailto:minhdat204@example.com)
+- GitHub: [minhdat204](https://github.com/minhdat204)
+
+---
+
+**Olympic Tin học 2025 – Đấu trường số** là một dự án đầy tiềm năng để hỗ trợ tổ chức các cuộc thi chuyên nghiệp và hiện đại!
