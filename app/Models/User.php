@@ -1,8 +1,8 @@
 <?php
+// filepath: /c:/Laravel/OlympicTech_Backend_2025/app/Models/User.php
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -13,18 +13,19 @@ class User extends Authenticatable
     use HasApiTokens, HasFactory, Notifiable;
 
     /**
-     * The attributes that are mass assignable.
+     * Các trường có thể gán hàng loạt (Mass Assignment)
      *
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
+        'username',
         'email',
         'password',
+        'role',
     ];
 
     /**
-     * The attributes that should be hidden for serialization.
+     * Các trường cần ẩn khi JSON hóa dữ liệu (Hidden Attributes)
      *
      * @var array<int, string>
      */
@@ -34,7 +35,7 @@ class User extends Authenticatable
     ];
 
     /**
-     * The attributes that should be cast.
+     * Các kiểu dữ liệu cần chuyển đổi (Casts)
      *
      * @var array<string, string>
      */
@@ -42,4 +43,12 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    /**
+     * Lấy các nhóm mà người dùng làm giám khảo
+     */
+    public function judgedGroups()
+    {
+        return $this->hasMany(Groups::class, 'judge_id');
+    }
 }
