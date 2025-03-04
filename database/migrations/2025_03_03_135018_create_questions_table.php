@@ -11,14 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('questions', function (Blueprint $table) {
             $table->id();
-            $table->string('username',255);
-            $table->string('email',255)->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->string('role',10);
-            $table->rememberToken();
+            $table->text('question_text');
+            $table->string('question_type');
+            $table->string('media_url');
+            $table->text('correct_anwer');
+            $table->json('options');
+            $table->string('dificulty',10);
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('questions');
     }
 };
