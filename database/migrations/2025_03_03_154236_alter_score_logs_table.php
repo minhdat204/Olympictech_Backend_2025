@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::table('score_logs',function(Blueprint $table){
             $table->foreignId('contestant_id')->constrained('contestants');
-            $table->foreignId('round_id')->constrained('rounds');
+            $table->foreignId('match_id')->constrained('matches');
         });
     }
 
@@ -24,8 +24,8 @@ return new class extends Migration
     {
         Schema::table('score_logs',function(Blueprint $table){
             $table->dropForeign(['contestant_id']);
-            $table->dropForeign(['round_id']);
-            $table->dropColumn(['contestant_id','round_id']);
+            $table->dropForeign(['match_id']);
+            $table->dropColumn(['contestant_id','match_id']);
         });
     }
 };
