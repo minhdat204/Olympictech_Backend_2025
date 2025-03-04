@@ -33,7 +33,7 @@ class Matches extends Model
 
     public function questionPackages()
     {
-        return $this->hasMany(QuestionPackages::class, 'match_id');
+        return $this->hasOne(QuestionPackages::class, 'match_id');
     }
 
     public function scoreLogs()
