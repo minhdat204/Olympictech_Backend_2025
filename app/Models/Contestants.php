@@ -16,6 +16,7 @@ class Contestants extends Model
         'fullname',
         'email',
         'school',
+        'class_year',
         'registration_number',
         'score',
         'status',

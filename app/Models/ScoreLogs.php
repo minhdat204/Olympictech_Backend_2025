@@ -12,7 +12,7 @@ class ScoreLogs extends Model
 
     protected $fillable = [
         'contestant_id',
-        'round_id',
+        'match_id',
         'score',
     ];
 
@@ -28,10 +28,10 @@ class ScoreLogs extends Model
     }
 
     /**
-     * Lấy thông tin vòng thi
+     * Lấy thông tin trận
      */
-    public function round()
+    public function match()
     {
-        return $this->belongsTo(Rounds::class, 'round_id');
+        return $this->belongsTo(Matches::class, 'match_id');
     }
 }
