@@ -11,6 +11,8 @@ class Questions extends Model
     use HasFactory;
 
     protected $fillable = [
+        'question_intro',
+        'question_explanation',
         'question_text',
         'question_type',
         'media_url',

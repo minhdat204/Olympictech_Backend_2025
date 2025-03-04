@@ -11,16 +11,16 @@ class QuestionPackages extends Model
     use HasFactory;
 
     protected $fillable = [
-        'round_id',
+        'match_id',
         'package_name',
     ];
 
     /**
-     * Lấy thông tin vòng thi của gói câu hỏi
+     * Lấy thông tin trận của gói câu hỏi
      */
-    public function round()
+    public function match()
     {
-        return $this->belongsTo(Rounds::class, 'round_id');
+        return $this->belongsTo(Matches::class, 'match_id');
     }
 
     /**
