@@ -10,6 +10,8 @@ class Answers extends Model
 {
     use HasFactory;
 
+    protected $table = 'anwers';
+
     protected $fillable = [
         'contestant_id',
         'question_id',

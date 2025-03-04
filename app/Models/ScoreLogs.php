@@ -10,6 +10,8 @@ class ScoreLogs extends Model
 {
     use HasFactory;
 
+    protected $table = 'scoreLogs';
+
     protected $fillable = [
         'contestant_id',
         'match_id',

@@ -10,6 +10,8 @@ class VideoSubmissions extends Model
 {
     use HasFactory;
 
+    protected $table = 'videoSubmissions';
+
     protected $fillable = [
         'round_id',
         'team_name',

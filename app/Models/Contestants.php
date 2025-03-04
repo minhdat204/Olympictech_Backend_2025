@@ -10,6 +10,8 @@ class Contestants extends Model
 {
     use HasFactory;
 
+    protected $table = 'contestants';
+
     protected $fillable = [
         'current_round_id',
         'group_id',

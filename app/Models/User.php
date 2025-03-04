@@ -12,6 +12,8 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
+    protected $table = 'user';
+
     /**
      * Các trường có thể gán hàng loạt (Mass Assignment)
      *

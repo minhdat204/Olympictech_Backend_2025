@@ -9,6 +9,8 @@ class Matches extends Model
 {
     use HasFactory;
 
+    protected $table = 'matches';
+
     protected $fillable = [
         'match_name',
         'status',

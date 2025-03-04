@@ -10,6 +10,8 @@ class QuestionPackageDetails extends Model
 {
     use HasFactory;
 
+    protected $table = 'questionPackageDetails';
+
     protected $fillable = [
         'package_id',
         'question_id',

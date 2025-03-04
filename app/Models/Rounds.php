@@ -10,6 +10,8 @@ class Rounds extends Model
 {
     use HasFactory;
 
+    protected $table = 'rounds';
+
     protected $fillable = [
         'round_name',
         'description',
