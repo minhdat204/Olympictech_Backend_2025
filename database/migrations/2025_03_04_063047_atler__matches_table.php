@@ -11,10 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('question_packages',function(Blueprint $table){
-            $table->unsignedBigInteger('match_id')->unique();
-            $table->foreign('match_id')->references('id')->on('matches');
-
+        Schema::table('matches',function(Blueprint $table){
+            $table->foreignId('round_id')->constrained('rounds');
         });
     }
 
@@ -23,9 +21,9 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('question_packages',function(Blueprint $table){
-            $table->dropForeign(['match_id']);
-            $table->dropColumn(['match_id']);
+        Schema::table('matches',function(Blueprint $table){
+            $table->dropForeign(['round_id']);
+            $table->dropColumn(['round_id']);
         });
     }
 };

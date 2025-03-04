@@ -11,14 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('contestants', function (Blueprint $table) {
+        Schema::create('matches', function (Blueprint $table) {
             $table->id();
-            $table->string('fullname');
-            $table->string('email')->unique();
-            $table->string('shool');
-            $table->integer('class_year');
-            $table->string('registration_number',100);
-            $table->decimal('score',10,2);
+            $table->string('match_name');
+            $table->dateTime('start_time');
+            $table->dateTime('end_time');
             $table->string('status',20);
             $table->timestamps();
         });
@@ -29,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('contestants');
-    }
+        Schema::dropIfExists('matches');
+    } 
 };
