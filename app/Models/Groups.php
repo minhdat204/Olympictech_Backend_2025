@@ -11,17 +11,17 @@ class Groups extends Model
     use HasFactory;
 
     protected $fillable = [
-        'round_id',
+        'match_id',
         'judge_id',
         'group_name',
     ];
 
     /**
-     * Lấy thông tin vòng thi của nhóm
+     * Lấy thông tin trận của nhóm
      */
-    public function round()
+    public function match()
     {
-        return $this->belongsTo(Rounds::class, 'round_id');
+        return $this->belongsTo(Matches::class, 'match_id');
     }
 
     /**
