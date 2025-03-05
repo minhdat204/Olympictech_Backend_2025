@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::table('matches',function(Blueprint $table){
             $table->foreignId('round_id')->constrained('rounds');
+            $table->foreignId('package_id')->constrained('question_packages');
         });
     }
 
@@ -23,6 +24,7 @@ return new class extends Migration
     {
         Schema::table('matches',function(Blueprint $table){
             $table->dropForeign(['round_id']);
+            $table->dropForeign(['package_id']);
             $table->dropColumn(['round_id']);
         });
     }
