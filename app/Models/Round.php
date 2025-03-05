@@ -6,7 +6,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Rounds extends Model
+class Round extends Model
 {
     use HasFactory;
 
@@ -29,7 +29,7 @@ class Rounds extends Model
      */
     public function contestants()
     {
-        return $this->hasMany(Contestants::class, 'current_round_id');
+        return $this->hasMany(Contestant::class, 'current_round_id');
     }
 
     /**
@@ -37,7 +37,7 @@ class Rounds extends Model
      */
     public function groups()
     {
-        return $this->hasMany(Groups::class, 'round_id');
+        return $this->hasMany(Group::class, 'round_id');
     }
 
     /**
@@ -45,7 +45,7 @@ class Rounds extends Model
      */
     public function questionPackages()
     {
-        return $this->hasMany(QuestionPackages::class, 'round_id');
+        return $this->hasMany(QuestionPackage::class, 'round_id');
     }
 
     /**
@@ -53,7 +53,7 @@ class Rounds extends Model
      */
     public function scoreLogs()
     {
-        return $this->hasMany(ScoreLogs::class, 'round_id');
+        return $this->hasMany(ScoreLog::class, 'round_id');
     }
 
     /**
@@ -61,6 +61,6 @@ class Rounds extends Model
      */
     public function videoSubmissions()
     {
-        return $this->hasMany(VideoSubmissions::class, 'round_id');
+        return $this->hasMany(VideoSubmission::class, 'round_id');
     }
 }

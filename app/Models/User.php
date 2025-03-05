@@ -12,7 +12,7 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
-    protected $table = 'user';
+    protected $table = 'users';
 
     /**
      * Các trường có thể gán hàng loạt (Mass Assignment)
@@ -51,6 +51,6 @@ class User extends Authenticatable
      */
     public function judgedGroups()
     {
-        return $this->hasMany(Groups::class, 'judge_id');
+        return $this->hasMany(Group::class, 'judge_id');
     }
 }

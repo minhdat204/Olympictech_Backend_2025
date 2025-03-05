@@ -6,11 +6,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class QuestionPackageDetails extends Model
+class QuestionPackageDetail extends Model
 {
     use HasFactory;
 
-    protected $table = 'questionPackageDetails';
+    protected $table = 'question_package_details';
 
     protected $fillable = [
         'package_id',
@@ -26,7 +26,7 @@ class QuestionPackageDetails extends Model
      */
     public function package()
     {
-        return $this->belongsTo(QuestionPackages::class, 'package_id');
+        return $this->belongsTo(QuestionPackage::class, 'package_id');
     }
 
     /**
@@ -34,6 +34,6 @@ class QuestionPackageDetails extends Model
      */
     public function question()
     {
-        return $this->belongsTo(Questions::class, 'question_id');
+        return $this->belongsTo(Question::class, 'question_id');
     }
 }

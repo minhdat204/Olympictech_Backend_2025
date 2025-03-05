@@ -6,7 +6,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Answers extends Model
+class Answer extends Model
 {
     use HasFactory;
 
@@ -33,7 +33,7 @@ class Answers extends Model
      */
     public function contestant()
     {
-        return $this->belongsTo(Contestants::class, 'contestant_id');
+        return $this->belongsTo(Contestant::class, 'contestant_id');
     }
 
     /**
@@ -41,6 +41,6 @@ class Answers extends Model
      */
     public function question()
     {
-        return $this->belongsTo(Questions::class, 'question_id');
+        return $this->belongsTo(Question::class, 'question_id');
     }
 }

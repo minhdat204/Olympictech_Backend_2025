@@ -6,7 +6,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Questions extends Model
+class Question extends Model
 {
     use HasFactory;
 
@@ -32,7 +32,7 @@ class Questions extends Model
      */
     public function answers()
     {
-        return $this->hasMany(Answers::class, 'question_id');
+        return $this->hasMany(Answer::class, 'question_id');
     }
 
     /**
@@ -40,7 +40,7 @@ class Questions extends Model
      */
     public function packageDetails()
     {
-        return $this->hasMany(QuestionPackageDetails::class, 'question_id');
+        return $this->hasMany(QuestionPackageDetail::class, 'question_id');
     }
 
     /**
@@ -48,7 +48,7 @@ class Questions extends Model
      */
     public function packages()
     {
-        return $this->belongsToMany(QuestionPackages::class, 'question_package_details', 'question_id', 'package_id')
+        return $this->belongsToMany(QuestionPackage::class, 'question_package_details', 'question_id', 'package_id')
             ->withPivot('question_order');
     }
 }

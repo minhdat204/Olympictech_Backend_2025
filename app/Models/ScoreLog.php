@@ -6,11 +6,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class ScoreLogs extends Model
+class ScoreLog extends Model
 {
     use HasFactory;
 
-    protected $table = 'scoreLogs';
+    protected $table = 'score_logs';
 
     protected $fillable = [
         'contestant_id',
@@ -26,7 +26,7 @@ class ScoreLogs extends Model
      */
     public function contestant()
     {
-        return $this->belongsTo(Contestants::class, 'contestant_id');
+        return $this->belongsTo(Contestant::class, 'contestant_id');
     }
 
     /**
@@ -34,6 +34,6 @@ class ScoreLogs extends Model
      */
     public function match()
     {
-        return $this->belongsTo(Matches::class, 'match_id');
+        return $this->belongsTo(RoundMatch::class, 'match_id');
     }
 }

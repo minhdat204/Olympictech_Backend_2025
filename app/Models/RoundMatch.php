@@ -5,13 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Matches extends Model
+class RoundMatch extends Model
 {
     use HasFactory;
 
     protected $table = 'matches';
 
     protected $fillable = [
+        'pakage_id',
         'match_name',
         'status',
         'start_time',
@@ -25,21 +26,21 @@ class Matches extends Model
 
     public function round()
     {
-        return $this->belongsTo(Rounds::class, 'round_id');
+        return $this->belongsTo(Round::class, 'round_id');
     }
 
     public function groups()
     {
-        return $this->hasMany(Groups::class, 'match_id');
+        return $this->hasMany(Group::class, 'match_id');
     }
 
     public function questionPackages()
     {
-        return $this->hasOne(QuestionPackages::class, 'match_id');
+        return $this->belongsTo(QuestionPackage::class, 'match_id');
     }
 
     public function scoreLogs()
     {
-        return $this->hasMany(ScoreLogs::class, 'match_id');
+        return $this->hasMany(ScoreLog::class, 'match_id');
     }
 }

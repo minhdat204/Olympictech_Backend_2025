@@ -6,7 +6,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Contestants extends Model
+class Contestant extends Model
 {
     use HasFactory;
 
@@ -29,7 +29,7 @@ class Contestants extends Model
      */
     public function currentRound()
     {
-        return $this->belongsTo(Rounds::class, 'current_round_id');
+        return $this->belongsTo(Round::class, 'current_round_id');
     }
 
     /**
@@ -37,7 +37,7 @@ class Contestants extends Model
      */
     public function group()
     {
-        return $this->belongsTo(Groups::class, 'group_id');
+        return $this->belongsTo(Group::class, 'group_id');
     }
 
     /**
@@ -45,7 +45,7 @@ class Contestants extends Model
      */
     public function answers()
     {
-        return $this->hasMany(Answers::class, 'contestant_id');
+        return $this->hasMany(Answer::class, 'contestant_id');
     }
 
     /**
@@ -53,6 +53,6 @@ class Contestants extends Model
      */
     public function scoreLogs()
     {
-        return $this->hasMany(ScoreLogs::class, 'contestant_id');
+        return $this->hasMany(ScoreLog::class, 'contestant_id');
     }
 }

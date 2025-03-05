@@ -6,7 +6,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Groups extends Model
+class Group extends Model
 {
     use HasFactory;
 
@@ -23,7 +23,7 @@ class Groups extends Model
      */
     public function match()
     {
-        return $this->belongsTo(Matches::class, 'match_id');
+        return $this->belongsTo(RoundMatch::class, 'match_id');
     }
 
     /**
@@ -39,6 +39,6 @@ class Groups extends Model
      */
     public function contestants()
     {
-        return $this->hasMany(Contestants::class, 'group_id');
+        return $this->hasMany(Contestant::class, 'group_id');
     }
 }

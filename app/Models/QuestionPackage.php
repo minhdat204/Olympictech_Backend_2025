@@ -6,14 +6,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class QuestionPackages extends Model
+class QuestionPackage extends Model
 {
     use HasFactory;
 
-    protected $table = 'questionPackages';
+    protected $table = 'question_packages';
 
     protected $fillable = [
-        'match_id',
         'package_name',
     ];
 
@@ -22,7 +21,7 @@ class QuestionPackages extends Model
      */
     public function match()
     {
-        return $this->belongsTo(Matches::class, 'match_id');
+        return $this->hasOne(RoundMatch::class, 'match_id');
     }
 
     /**
@@ -30,7 +29,7 @@ class QuestionPackages extends Model
      */
     public function details()
     {
-        return $this->hasMany(QuestionPackageDetails::class, 'package_id');
+        return $this->hasMany(QuestionPackageDetail::class, 'package_id');
     }
 
     /**
@@ -38,7 +37,7 @@ class QuestionPackages extends Model
      */
     public function questions()
     {
-        return $this->belongsToMany(Questions::class, 'question_package_details', 'package_id', 'question_id')
+        return $this->belongsToMany(Question::class, 'question_package_details', 'package_id', 'question_id')
             ->withPivot('question_order')
             ->orderBy('question_order');
     }

@@ -6,11 +6,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class VideoSubmissions extends Model
+class VideoSubmission extends Model
 {
     use HasFactory;
 
-    protected $table = 'videoSubmissions';
+    protected $table = 'video_submissions';
 
     protected $fillable = [
         'round_id',
@@ -31,6 +31,6 @@ class VideoSubmissions extends Model
      */
     public function round()
     {
-        return $this->belongsTo(Rounds::class, 'round_id');
+        return $this->belongsTo(Round::class, 'round_id');
     }
 }
