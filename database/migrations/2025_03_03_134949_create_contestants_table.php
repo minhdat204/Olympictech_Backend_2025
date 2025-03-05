@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('shool');
             $table->integer('class_year');
             $table->string('registration_number',100);
-            $table->decimal('score',10,2);
+            $table->decimal('score',10,2)->default(0);
             $table->string('status',20);
             $table->timestamps();
         });
