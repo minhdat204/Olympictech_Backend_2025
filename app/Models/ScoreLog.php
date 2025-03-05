@@ -14,6 +14,14 @@ class ScoreLog extends Model
         'match_id',
     ];
 
+    public $timestamps = true;
+
+    const CREATED_AT = null;
+
+    protected $casts = [
+        'updated_at' => 'datetime',
+    ];
+
     public function contestant()
     {
         return $this->belongsTo(Contestant::class);
