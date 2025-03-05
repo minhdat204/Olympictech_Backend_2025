@@ -26,7 +26,7 @@ class ScoreLog extends Model
     {
         return $this->belongsTo(Contestant::class);
     }
-
+    
     public function match()
     {
         return $this->belongsTo(RoundMatch::class);

@@ -23,7 +23,6 @@ class QuestionsSeeder extends Seeder
             'correct_answer' => '2',
             'options' => json_encode(['1', '2', '3', '4']),
             'difficulty' => 'dễ',
-            'gold_winner_id' => 0,
         ]);
 
         Question::create([
@@ -36,7 +35,6 @@ class QuestionsSeeder extends Seeder
             'correct_answer' => 'World',
             'options' => json_encode([]),
             'difficulty' => 'trung bình',
-            'gold_winner_id' => 0,
         ]);
 
         Question::create([
@@ -49,7 +47,6 @@ class QuestionsSeeder extends Seeder
             'correct_answer' => 'Code mẫu',
             'options' => json_encode([]),
             'difficulty' => 'khó',
-            'gold_winner_id' => 0,
         ]);
 
         Question::create([
@@ -62,7 +59,6 @@ class QuestionsSeeder extends Seeder
             'correct_answer' => 'x = 2',
             'options' => json_encode([]),
             'difficulty' => 'khó',
-            'gold_winner_id' => 0,
         ]);
     }
 }

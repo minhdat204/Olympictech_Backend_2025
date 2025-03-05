@@ -31,6 +31,7 @@ return new class extends Migration
             $table->foreign('package_id')->references('id')->on('question_packages')->onDelete('cascade');
             $table->foreign('round_id')->references('id')->on('rounds')->onDelete('cascade');
             $table->foreign('current_question_id')->references('id')->on('question_package_details')->onDelete('cascade');
+            $table->foreign('gold_winner_id')->references('id')->on('matches')->onDelete('cascade');
         });
 
         // question_package_details

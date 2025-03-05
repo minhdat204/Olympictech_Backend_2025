@@ -52,7 +52,6 @@ return new class extends Migration
             $table->text('correct_answer');
             $table->json('options');
             $table->string('difficulty', 20);
-            $table->unsignedBigInteger('gold_winner_id');
             $table->timestamps();
         });
 
@@ -73,6 +72,7 @@ return new class extends Migration
             $table->dateTime('end_time');
             $table->string('status', 20);
             $table->unsignedBigInteger('current_question_id')->nullable();
+            $table->unsignedBigInteger('gold_winner_id')->nullable();
             $table->string('current_question_status', 20);
             $table->unsignedBigInteger('completed_questions');
             $table->unsignedBigInteger('round_id');
