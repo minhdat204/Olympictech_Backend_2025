@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class RoundMatch extends Model
 {
+    protected $table = 'matches';
+
     protected $fillable = [
         'match_name',
         'start_time',
