@@ -72,7 +72,7 @@ return new class extends Migration
             $table->dateTime('start_time');
             $table->dateTime('end_time');
             $table->string('status', 20);
-            $table->unsignedBigInteger('current_question_id');
+            $table->unsignedBigInteger('current_question_id')->nullable();
             $table->string('current_question_status', 20);
             $table->unsignedBigInteger('completed_questions');
             $table->unsignedBigInteger('round_id');
