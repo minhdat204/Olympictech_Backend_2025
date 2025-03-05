@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('anwers',function(Blueprint $table){
+        Schema::table('answers',function(Blueprint $table){
             $table->foreignId('contestant_id')->constrained('contestants');
             $table->foreignId('question_id')->constrained('questions');
         });
@@ -22,7 +22,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('anwers',function(Blueprint $table){
+        Schema::table('answers',function(Blueprint $table){
             $table->dropForeign(['contestant_id']);
             $table->dropForeign(['question_id']);
             $table->dropColumn(['contestant_id','question_id']);

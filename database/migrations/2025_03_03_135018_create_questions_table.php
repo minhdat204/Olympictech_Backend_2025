@@ -17,10 +17,10 @@ return new class extends Migration
             $table->text('question_intro');
             $table->text('question_explanation');
             $table->string('question_type');
-            $table->string('media_url');
+            $table->string('media_url')->nullable();;
             $table->text('correct_anwer');
             $table->json('options');
-            $table->string('dificulty',10);
+            $table->string('dificulty',20);
             $table->timestamps();
         });
     }

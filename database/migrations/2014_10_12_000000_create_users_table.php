@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('email',255)->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->string('role',10);
+            $table->string('role',20)->default('judge');
             $table->rememberToken();
             $table->timestamps();
         });

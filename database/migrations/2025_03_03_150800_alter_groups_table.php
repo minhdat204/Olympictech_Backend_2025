@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::table('groups',function(Blueprint $table){
             $table->foreignId('match_id')->constrained('matches');
-            $table->foreignId('judge_id')->constrained('groups');
+            $table->foreignId('judge_id')->constrained('users');
         });
     }
 
