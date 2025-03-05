@@ -6,9 +6,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Hash;
 use Laravel\Sanctum\HasApiTokens;
+use Tymon\JWTAuth\Contracts\JWTSubject; // Nhúng JWTSubject
 
-class User extends Authenticatable
+class User extends Authenticatable implements JWTSubject // Thêm implements JWTSubject
 {
     use HasApiTokens, HasFactory, Notifiable;
 
@@ -45,10 +47,46 @@ class User extends Authenticatable
     ];
 
     /**
-     * Lấy các nhóm mà người dùng làm giám khảo
+     * Lấy identifier cho JWT (thường là primary key của user).
+     *
+     * @return mixed
+     */
+    public function getJWTIdentifier()
+    {
+        return $this->getKey();
+    }
+
+    /**
+     * Lấy các custom claims cho JWT.
+     *
+     * @return array
+     */
+    public function getJWTCustomClaims()
+    {
+        return [];
+    }
+
+    /**
+     * Lấy các nhóm mà người dùng làm giám khảo.
      */
     public function judgedGroups()
     {
         return $this->hasMany(Groups::class, 'judge_id');
+    }
+
+    /**
+     * Đăng ký người dùng mới.
+     *
+     * @param array $arr
+     * @return \App\Models\User
+     */
+    public static function register(array $arr)
+    {
+        return User::create([
+            'username' => $arr['username'],
+            'email'    => $arr['email'],
+            'password' => Hash::make($arr['password']),
+            'role'     => $arr['role'],
+        ]);
     }
 }
